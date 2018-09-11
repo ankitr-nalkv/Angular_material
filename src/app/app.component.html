@@ -1,0 +1,52 @@
+
+<mat-toolbar>
+  Sign Up!!!
+  </mat-toolbar>
+  
+  <form class="row">
+    <div class="col-md-3">
+      <mat-form-field appearance="none">
+        <div>First Name</div>
+        <input type="text" matInput name="firstName" class="form-control"
+        required minlength="4" appForbiddenName="bob"/>
+      </mat-form-field>
+    </div>
+    <div class="col-md-3">
+      <mat-form-field appearance="none">
+          <div>Last Name</div>
+        <input appearance="outline"type="text" cols="10" matInput name="lastName" />
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-radio-group appearance="none">
+        <div>Gender</div>
+        <mat-radio-button name="gender" value="male"> Male </mat-radio-button> &nbsp;
+        <mat-radio-button name="gender" value="female"> Female </mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field appearance="outline">
+        <div>Email</div>
+        <input appearance="outline" matInput type="email" name="email"  />
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field appearance="none">
+          <div>Address</div>
+        <textarea matInput name="address" rows="3" cols="20" ></textarea>
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field appearance="none">
+          <div>Interests</div>
+        <mat-select name="areaInterest" >
+          <mat-option *ngFor="let interest of interests" [value]="interest.value">
+            {{interest.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-md-12">
+      <button mat-raised-button color="primary" type="submit">REGISTER</button>
+    </div>
+  </form>
